@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Culinary Menu</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 2rem; }
-        h1 { color: #333; }
-        .food-item { border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 1rem; }
-        .price { font-weight: bold; color: green; }
-    </style>
-</head>
-<body>
-    <h1>Our Menu</h1>
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1>Our Menu</h1>
 
     {% for item in food_items %}
         <div class="food_item">
@@ -23,5 +12,8 @@
     {% empty %}
         <p>No menu items available right now.</p>
     {% endfor %}
-</body>
-</html>
+
+
+<a href="{% url 'place_order' %}" class="btn btn-primary mt-3">Order Now</a>
+{% endblock %}
+
