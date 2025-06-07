@@ -1,6 +1,7 @@
 {% extends 'menu/base.html' %}
 
 {% block content %}
+
 <div class="container">
     <h1 class="mb-4 text-center">🍽️ Staff Order Dashboard</h1>
     
@@ -9,6 +10,9 @@
         <div class="card-body">
             <h5 class="card-title">{{ order.food_item.name }}</h5>
             <p class="card-text"><strong>Customer:</strong> {{ order.customer_name }}</p>
+            <p class="card-text"><strong>Customer Email:</strong> {{ order.customer_email }}</p>
+            <p class="card-text"><strong>Date:</strong> {{ order.Date }}</p>
+            <p class="card-text"><strong>Items order:</strong> {{ order.items }}</p>
             <p class="card-text"><strong>Status:</strong> {{ order.status }}</p>
 
             <form method="post" class="row g-3">
